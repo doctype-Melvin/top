@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The CSS is real</title>
+  <style>
+      p {
+          background-color: green;
+          color: white;
+          font-size: 18px;
+      }
+  </style>
+</head>
+<body>
+<h2>Different ways of adding CSS</h2>
+  <div>Style me via the external method!</div>
+  <p>I would like to be styled with the internal method, please.</p>
+  <button style="background-color: orange; font-size: 18px;">Inline Method</button>
+<br>
+<br>
+<h2>Classes and IDs</h2>
+    <p class="odd">Number 1 - I'm a class!</p>
+    <div id="two">Number 2 - I'm one ID.</div>
+    <p class="odd three">Number 3 - I'm a class, but cooler!</p>
+    <div id="four">Number 4 - I'm another ID.</div>
+    <p class="odd">Number 5 - I'm a class!</p>
+<br>
+<br>
+<h2>Grouping selectors</h2>
+    <button class="buttonone">Click Me!</button>
+    <button class="buttontwo">No, Click Me!</button>
+<br>
+<br>
+<h2>Chaining selectors</h2>
+    <div id="chain">
+        <img class="avatar proportioned" src="./pexels-katho-mutodo-8434791.jpg" alt="">
+        <img class="avatar distorted" src="./pexels-andrea-piacquadio-3777931.jpg" alt="">
+    </div>
+    <!-- Use the classes ABOVE this line -->
+    <div id="chain">
+        <img class="original-proportioned" src="./pexels-katho-mutodo-8434791.jpg" alt="">
+        <img class="original-distorted" src="./pexels-andrea-piacquadio-3777931.jpg" alt="">
+    </div>
+<br>
+<br>
+<h2>Descendant Combinator</h2>
+    <div class="container">
+        <p class="text">This should be styled.</p>
+    </div>
+    <p class="text">This should be unstyled.</p>
+    <p class="text">This should be unstyled.</p>
+    <div class="container">
+        <p class="text">This should be styled.</p>
+        <p class="text">This should be styled.</p>
+    </div>
+<br>
+<br>
+<h2>Cascade fix</h2>
+    <p class="para">I'm just a simple paragraph!</p>
+    <p class="para small-para">I'm a smaller paragraph!</p>
+
+    <button id="confirm-button" class="button confirm">Confirm</button>
+    <button id="cancel-button" class="button cancel">Cancel</button>
+
+    <div class="text">I'm not related to those divs down there.</div>
+    <div class="text">I have a child!
+    <div class="text child">My ancestor is so embarrassing.</div>
+    </div>
+<br>
+<br>
+    <h2>Margin and Padding exercise</h2>
+    <div class="one">
+      DIV ONE
+    </div>
+    <div class="two">
+      DIV TWO
+    </div>
+    <div class="three">
+      DIV THREE
+    </div>
+<br>
+<br>
+    <h2>Margin and Padding exercise 2</h2>
+    <div class="card">
+        <h1 class="title">I'm a card</h1>
+        <div class="content">I have content inside me..lorem ipsum blah blah blah. Here's some stuff you need to read.</div>
+        <div class="button">and a <button>BIG BUTTON</button></div>
+      </div>
+
+
+
+</body>
+</html>

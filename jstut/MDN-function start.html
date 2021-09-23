@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Function start</title>
+    <style>
+     .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 242px;
+        border-radius: 10px;
+        background-color: #eee;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: rgb(0, 0, 0);
+        padding-left: 82px;
+        background-position: 25px center;
+        background-repeat: no-repeat;
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>Display message box</button>
+
+    <script>
+            const btn = document.querySelector('button');
+            btn.onclick = function (){                  //anonymous function calls the function displayMessage onclick
+                displayMessage('Critical status message', 'warning');
+                displayMessage('You are about to talk to a stranger', 'chat');
+            };
+      
+            function displayMessage(msgText, msgType){
+          const html = document.querySelector('html');  //DOM API function to select html
+
+          const panel = document.createElement('div');  //DOM API function to create div(panel)
+          panel.setAttribute('class', 'msgBox');        //DOM API function to set class to msgBox for panel
+          html.appendChild(panel);                      //DOM API function appends child div to parent html
+
+          const msg = document.createElement('p'); 
+          msg.textContent = msgText;
+          panel.appendChild(msg);
+
+          const closeBtn = document.createElement('button');
+          closeBtn.textContent = 'x';
+          panel.appendChild(closeBtn);
+
+          closeBtn.onclick = function (){
+              panel.parentNode.removeChild(panel);  //DOM API function to remove a specific child element of the html
+          
+        }
+        if (msgType === 'warning') {
+            msg.style.backgroundImage = "warning.png";
+            panel.style.backgroundColor = 'red';
+        } else if (msgType === 'chat') {
+            msg.style.backgroundImage = "chat.png";
+            panel.style.backgroundColor = 'aqua';
+        } else {
+            msg.style.paddingLeft = "20px";
+        }  
+    }
+
+      
+    </script>
+  </body>
+</html>
+

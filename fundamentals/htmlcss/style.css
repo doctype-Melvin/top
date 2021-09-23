@@ -1,0 +1,188 @@
+/*Adding CSS via stylesheet*/
+div {
+    background-color: red;
+    color:white;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/*Classes and IDs*/
+.odd {
+    background-color: #ffb6c1;
+    font-family: Verdana, sans-serif;
+    color: #000000
+}
+
+#two {
+    background-color: white;
+    color: #0000ff;
+    font-size: 36px;
+}
+
+.odd.three {
+    font-size: 24px;
+}
+
+#four {
+    background-color:#90ee90;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+/*Grouping selectors*/
+.buttonone,
+.buttontwo {
+    font-family: Helvetica, 'Times New Roman', sans-serif;
+    font-size: 28px;
+}
+
+.buttonone {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.buttontwo {
+    background-color: #ffff00;
+}
+
+/*Chaining selectors*/
+#chain {
+    background-color: white;
+}
+.avatar.proportioned {
+    width: 300px;
+    height: auto;
+}
+
+.avatar.distorted {
+    width: 200px;
+    height: 400px;
+}
+
+/*Descendant Combinator*/
+.container .text {
+    background-color: #ffff00;
+    color: #ff0000;
+    font-size: 20px;
+    text-align: center;
+}
+
+.text {
+    background-color: white;
+    color: black;
+}
+.container {
+    background-color: white;
+}
+
+/*Cascade fix*/
+.para,
+.small-para {
+  color: hsl(0, 100%, 50%);
+  background-color: white;
+}
+
+.para {
+    font-size: 22px;
+  }
+  
+
+.small-para {
+  font-size: 12px;
+}
+
+.button.confirm {
+  background: green;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+} 
+
+.button {
+  background-color: #ffc0cb;
+  color: black;
+  font-size: 20px;
+}
+
+div.text {
+  color: green;
+  font-size: 28px;
+  text-align:left;
+}
+
+div.text .child {
+    color: red;
+    font-size: 14px;
+  }
+
+/*Margin and padding*/
+body {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .one {
+    background: pink;
+    border: 3px solid blue;
+    /* CHANGE ME */
+    padding: 32px;
+    margin: 12px;
+  }
+  
+  .two {
+    background: lightblue;
+    border: 3px solid purple;
+    /* CHANGE ME */
+    margin-bottom: 48px;
+  }
+  
+  .three {
+    background: peachpuff;
+    border: 3px solid brown;
+    width: 200px;
+    /* CHANGE ME */
+    padding: 32px;
+    margin-left: auto;
+  }
+  
+/*Part 2*/
+.card {
+    width: 400px;
+    background: rgb(218, 212, 212);
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+  }
+  
+  .title {
+    background: #e3f4ff;
+    color: black;
+    padding: 5px;
+    margin: 8px;
+    font-size: 16px;
+  }
+  
+  .content {
+    background: #e3f4ff;
+    color: black;
+    margin: 8px;
+    padding: 16px 8px;
+  }
+  
+  .button {
+    background: #e3f4ff;
+    color: black;
+    margin: 8px;
+    padding: 8px;
+  }
+  
+  button {
+    background: white;
+    border: 1px solid #eee;
+    padding: 8px 24px;
+    display: block;
+    margin: auto
+  }
