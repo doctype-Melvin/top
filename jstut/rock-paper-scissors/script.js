@@ -19,26 +19,12 @@ function playRound(playerSelection, computerSelection) {
 //The game function
 
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    playRound()
-            if ((playerSelection == 'Rock' && computerSelection == 'Scissors') ||
-                    (playerSelection == 'Paper' && computerSelection == 'Rock') ||
-                        (playerSelection == 'Scissors' && computerSelection == 'Paper')) {
-                            playerScore+=1
-                                
-                }else if ((playerSelection == 'Scissors' && computerSelection == 'Rock') || 
-                        (playerSelection == 'Rock' && computerSelection == 'Paper') ||
-                            (playerSelection == 'Paper' && computerSelection == 'Scissors' )) {
-                                computerScore+=1
-                                    }
+    playRound()        
 }
     
     
 
-let computerSelection = computerPlay();
-let playerSelection = 'Scissors';
+let computerSelection = computerPlay().toLowerCase();
+let playerSelection = 'Scissors'.toLowerCase();
 console.log(computerSelection)
 console.log(playRound(playerSelection, computerSelection))
-console.log(game(playRound()));
-console.
