@@ -1,45 +1,44 @@
-//The computer's choice function
+//Choice Array
 let choice = ['Rock', 'Paper', 'Scissors'];
-function computerPlay() {
-   return choice[Math.floor(Math.random()*choice.length)];
-}
 
-//Automated player function
-function playerPlay() {
+//Player and computer functions
+function playerChoice() {
+    return choice[Math.floor(Math.random()*choice.length)];
+}
+function computerChoice() {
     return choice[Math.floor(Math.random()*choice.length)];
 }
 
-//Scores
-let compScore = 0
-let playScore = 0
+//Player and computer choices
+let player = playerChoice();
+let computer = computerChoice();
+
+//Counters
+let playerScore = 0
+let computerScore = 0
+let roundsPlayed = 0
 
 //The play round function
-function playRound(playerSelection, computerSelection) {
-    
-    if ((playerSelection == 'Rock' && computerSelection == 'Scissors') ||
-        (playerSelection == 'Paper' && computerSelection == 'Rock') ||
-        (playerSelection == 'Scissors' && computerSelection == 'Paper')) {
-            playScore++
-        return `Player wins! ${playerSelection} beats ${computerSelection}!`
-    }else if (playerSelection == computerSelection) {
-            return `Tied game! Both chose ${playerSelection}.`
-        }     compScore++
-                return `Computer wins! ${computerSelection} beats ${playerSelection}!`
+function playRound(player, computer) {
+    if ((player == 'Rock' && computer == 'Scissors') ||
+        (player == 'Scissors' && computer == 'Paper') ||
+        (player == 'Paper' && computer == 'Rock')) {
+            playerScore++
+            return 'Player wins!'
+        }
+else if (player == computer) {
+        return `It's a Draw!`
+        } computerScore++
+        return 'Computer wins!'
+
 }
 
+//Play 5 rounds
 
 
-//The game function
-
-
-
-  
-
-let computerSelection = computerPlay();
-let playerSelection = playerPlay();
-
-console.log(computerSelection)
-console.log(playerSelection)
-console.log(playRound(playerSelection, computerSelection))
-console.log(playScore)
-console.log(compScore)
+//Console.log
+console.log(player)
+console.log(computer)
+console.log(playRound(player, computer))
+console.log(playerScore)
+console.log(computerScore)
