@@ -2,15 +2,34 @@
 let choice = ['rock', 'paper', 'scissors'];
 
 //Player and computer functions
-function playerChoice() {
+    //This function is the automated playerChoice function
+/*function playerChoice() {
     return choice[Math.floor(Math.random()*choice.length)];
 }
+*/
+//This function gets player input to play one round
+function playerChoice() {
+    let playerWeapon = prompt(`Your weapon of choice.
+        1 = Rock    2 = Paper    3 = Scissors
+        Or just hit OK for random attack`);
+        if (playerWeapon == 1) {
+            return choice[0];            
+        }else if (playerWeapon == 2) {
+            return choice[1];
+        }else if (playerWeapon == 3) {
+            return choice[2];
+        }else if (playerWeapon == "") { //If user only clicks OK the random function picks weapon
+            return choice[Math.floor(Math.random()*choice.length)];
+        }
+}
+
+//This is the computer function
 function computerChoice() {
     return choice[Math.floor(Math.random()*choice.length)];
 }
 
 //Player and computer variables
-let player 
+let player
 let computer 
 
 //Counters
@@ -28,16 +47,18 @@ function playRound() {
 
     //Winning cases
     roundsPlayed++
-    if ((player.toLowerCase() == 'rock' && computer == 'scissors') ||
-        (player.toLowerCase() == 'scissors' && computer == 'paper') ||
-        (player.toLowerCase() == 'paper' && computer == 'rock')) {
+    if ((player == 'rock' && computer == 'scissors') ||
+        (player == 'scissors' && computer == 'paper') ||
+        (player == 'paper' && computer == 'rock')) {
             playerScore++;
-            return 'Player wins!'
-        }
-else if (player == computer) {
-            return `It's a draw!`
+            return alert(`Player wins! 
+                    Score Player: ${playerScore} vs Computer: ${computerScore}`)
+        }else if (player == computer) {
+            return alert(`It's a draw!
+                    Score Player: ${playerScore} vs Computer: ${computerScore}`)
         }   computerScore++
-            return 'Computer wins!'
+            return alert(`Computer wins!
+                    Score Player: ${playerScore} vs Computer: ${computerScore}`)
 };
 
 
@@ -53,10 +74,16 @@ function game(){
     
     //Final score declaration
     if (playerScore > computerScore){
-            return `Player has won the game!`
+            return alert(`Player has won the game!
+                            Final Score 
+            Player: ${playerScore} vs Computer: ${computerScore}`)
         }else if (playerScore < computerScore){
-                return `Computer has won the game!`
-                    }return `Tied score! It's a draw!`
+                return alert(`Computer has won the game!
+                                Final Score 
+                Player: ${playerScore} vs Computer: ${computerScore}`)
+                    }return alert(`Tied score! It's a draw!
+                                    Final Score 
+                    Player: ${playerScore} vs Computer: ${computerScore}`)
     
 };
 console.log(game());
