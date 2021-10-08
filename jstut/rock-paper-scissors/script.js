@@ -1,5 +1,5 @@
 //Choice Array
-let choice = ['Rock', 'Paper', 'Scissors'];
+let choice = ['rock', 'paper', 'scissors'];
 
 //Player and computer functions
 function playerChoice() {
@@ -9,9 +9,9 @@ function computerChoice() {
     return choice[Math.floor(Math.random()*choice.length)];
 }
 
-//Player and computer choices
-let player = playerChoice();
-let computer = computerChoice();
+//Player and computer variables
+let player 
+let computer 
 
 //Counters
 let playerScore = 0
@@ -19,26 +19,50 @@ let computerScore = 0
 let roundsPlayed = 0
 
 //The play round function
-function playRound(player, computer) {
-    if ((player == 'Rock' && computer == 'Scissors') ||
-        (player == 'Scissors' && computer == 'Paper') ||
-        (player == 'Paper' && computer == 'Rock')) {
-            playerScore++
+function playRound() {
+    //Rock, paper or scissors choice functions
+    player = playerChoice();
+        console.log(player);
+    computer = computerChoice();
+        console.log(computer);
+
+    //Winning cases
+    roundsPlayed++
+    if ((player.toLowerCase() == 'rock' && computer == 'scissors') ||
+        (player.toLowerCase() == 'scissors' && computer == 'paper') ||
+        (player.toLowerCase() == 'paper' && computer == 'rock')) {
+            playerScore++;
             return 'Player wins!'
         }
 else if (player == computer) {
-        return `It's a Draw!`
-        } computerScore++
-        return 'Computer wins!'
+            return `It's a draw!`
+        }   computerScore++
+            return 'Computer wins!'
+};
 
-}
 
-//Play 5 rounds
-
+//The play function
+function game(){
+    //Loop for 5 rounds
+    do {
+        playRound();
+        console.log(playerScore);
+        console.log(computerScore);
+        console.log('ROUND');
+    } while (roundsPlayed < 5);
+    
+    //Final score declaration
+    if (playerScore > computerScore){
+            return `Player has won the game!`
+        }else if (playerScore < computerScore){
+                return `Computer has won the game!`
+                    }return `Tied score! It's a draw!`
+    
+};
+console.log(game());
 
 //Console.log
-console.log(player)
-console.log(computer)
-console.log(playRound(player, computer))
+console.log('PL   CPU   RDS')
 console.log(playerScore)
 console.log(computerScore)
+console.log(roundsPlayed)
