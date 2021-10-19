@@ -1,65 +1,59 @@
-let choice = ['rock', 'paper', 'scissors',];
-
-let player;
 let playerScore = 0;
-let computer;
 let computerScore = 0;
-let roundsPlayed;
 
-let computerChoice = function() {
-    return choice[Math.floor(Math.random()*choice.length)];
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+
+rock.addEventListener('click', () => {
+    game('rock');
+});
+paper.addEventListener('click', () => {
+    game('paper');
+});
+scissors.addEventListener('click', () => {
+    game('scissors');
+});
+
+function computer() {
+    const choice = ['rock', 'paper', 'scissors'];
+    return choice[Math.floor(Math.random()*choice.length)] 
 };
-console.log(computerChoice());
 
-const buttons = document.querySelectorAll('.button');
-let playerChoice = buttons.forEach((button) => {
-    button.addEventListener('click', function(e){
-        if (e.target.id == 'rock'){
-            console.log(choice[0])
-            return choice[0];
-        }else if (e.target.id == 'paper'){
-            console.log(choice[1])
-            return choice[1];
-        }else if (e.target.id == 'scissors'){
-            console.log(choice[2])
-            return choice[2];
-        }
-    }
-)});
+function playRound(ply, cpu) {
+    if ((ply == 'rock' && cpu == 'scissors') ||
+        (ply == 'paper' && cpu == 'rock') ||
+        (ply == 'scissors' && cpu == 'paper')) {
+            playerScore+=1
+            return round.textContent = `${ply} vs ${cpu} You won this round`;
+        }else if (ply == cpu) {
+            return round.textContent = `${ply} vs ${cpu} It's a draw`;
+        }computerScore+=1
+            return round.textContent = `${ply} vs ${cpu} Computer won this round`;
+};
 
-
-function playRound(player, computer) {
-    player = playerChoice;
-    computer = computerChoice;
-    roundsPlayed++;
-    if ((player == 'rock' && computer == 'scissors') ||
-        (player == 'scissors' && computer == 'paper') ||
-        (player == 'paper' && computer == 'rock')) {
-            playerScore++;
-        }else if (player == computer) {
-            return
-        } computerScore++
-}
-
-function game(){
-    //Loop for 5 rounds
-   do {
-        playRound();
-        console.log(playerScore);
-        console.log(computerScore);
-        console.log('ROUND');
-    } while (roundsPlayed < 5);
+function game(input) {
+    let ply = input;
+    let cpu = computer();
     
-    //Final score declaration
-    if (playerScore > computerScore){
-            return alert(`Player has won the game!
-                            Final Score 
-            Player: ${playerScore} vs Computer: ${computerScore}`)
-        }else if (playerScore < computerScore){
-                return alert(`Computer has won the game!
-                                Final Score 
-                Player: ${playerScore} vs Computer: ${computerScore}`)
-                    }return alert(`Tied score! It's a draw!
-                                    Final Score 
-                    Player: ${playerScore} vs Computer: ${computerScore}`)
-                }
+    playRound(ply, cpu);
+    if (playerScore == 5) {
+        const winner = document.querySelector('#winner');
+        winner.textContent = `You've won the game!`;
+        return winner;
+    }else if (computerScore == 5) {
+        const loser = document.querySelector('#winner');
+        winner.textContent = `You've lost!`
+        return loser;
+    }
+    player.textContent = `Player: ${playerScore}`;
+    comp.textContent = `Computer: ${computerScore}`
+};
+
+const scores = document.querySelector('#scores');
+        //scores.setAttribute('style', 'background: black; color: white');
+const player = document.querySelector('#player');
+        player.textContent = `Player: ${playerScore}`;
+const comp = document.querySelector('#computer');
+        comp.textContent = `Computer: ${computerScore}`
+const round = document.querySelector('.round-result');
