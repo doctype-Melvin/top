@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rampart+One&display=swap');
+body {
+    background: rgb(85, 150, 173);
+    margin: 0;
+    height: 100vh;
+}
+
+.game-wrapper {
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+.left-box {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-box {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center-box {
+    flex: 1;
+}
+
+.head {
+    font-family: 'Abril Fatface';
+    font-size: 2.5em;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-family: monospace;
+    font-size: 4em;
+}
+
+.prompt {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: monospace;
+    padding: 0px;
+}
+.round-result {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.game-winner {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.choices {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.rock, .paper, .scissors {
+    max-height: 150px;
+    margin: 10px;
+    border-radius: 15%;
+    transition: 0.2s ease-out;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.left-box .rock:hover, 
+.left-box .paper:hover, 
+.left-box .scissors:hover {
+    opacity: 75%;
+    scale: 1.1;
+    transition: all 0.3s;
+    
+}
+
+.left-box .rock:active,
+.left-box .paper:active,
+.left-box .scissors:active {
+    color: white;
+    opacity: 100%;
+}
+
+
+@keyframes cpu {
+    0% {scale: 1;}
+    50% {scale: 1.3;}
+    100% {scale: 1;}
+}
+
+.cpu-selection {
+    animation-name: cpu;
+    animation-duration: 0.5s;
+}
+
+
+

@@ -1,19 +1,47 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="rock paper scissors">
+        <title>Choice Choice Choice</title>
+        <meta name="description" content="play the game">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-       
+    <div class="game-wrapper">
+        <div class="left-box">
+            <div class="head">You</div>
+            <div class="choices">
+                    <button id="rock"><img class="rock" src="rock.jpg"></button>
+                    <button id="paper"><img class="paper" src="paper.jpg"></button>
+                    <button id="scissors"><img class="scissors" src="scissors.jpg"></button>
+                </div>
+                
+            <div class="selection"></div>
+        </div>
+        <div class="center-box">
+                <div class="score">
+                    <div class="player-score">0</div>
+                    <div class="colon">:</div>
+                    <div class="computer-score">0</div>
+                </div>
+                <div class="prompt">
+                    <div class="round-result">5 Points to win the game!</div>
+                    <div class="game-winner"></div>
+                </div>
+        </div>
+            
+            <div class="right-box">
+                <div class="head">Mr. Roboto</div>
+                <div class="choices">
+                    <img class="rock" id="cpur" src="rock.jpg">
+                    <img class="paper" id="cpup" src="paper.jpg">
+                    <img class="scissors" id="cpus" src="scissors.jpg">
+                </div>
+                <div class="selection"></div>
+        </div>
+    </div>
         
         <script src="script.js" async defer></script>
     </body>
