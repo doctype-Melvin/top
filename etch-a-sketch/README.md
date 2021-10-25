@@ -7,4 +7,12 @@ Oct. 22 Friday
 **lost track of logging my progress**
 
 Oct. 25 Monday
-The task for today is getting close to finishing the project. 
+The task for today is getting close to finishing the project.
+*UPDATE*
+I finally could figure out how to add color to the grid. The paintColor function
+seems rather bulky but it works. I added a click eventListener that activates the
+painting function. Next I'll have to work on another function which removes
+the painting eventListener so that upon clicking no more divs change color. 
+Another feature will be the rainbow mode which adds random colors. Finally there
+needs to be an option for different opacity levels. 
+Lots of work still ahead. 

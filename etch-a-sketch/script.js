@@ -54,26 +54,26 @@ function changeGrid(size) {
         pixel.setAttribute('id', 'pixel');
         grid.appendChild(pixel);
     }
+    paintColor();
 };
 
-//The color picker is selected and the 
-//function(e) spits out a value as e.target.value
-//which is the color by user choice
-const picker = document.getElementById('picker');
-picker.addEventListener('input', function(e) {
-let picked = e.target.value;
-console.log(picked)
+function paintColor(){
+    let squares = document.querySelectorAll('#pixel');
+    let picker = document.getElementById('picker');
+    picker.addEventListener('input', function(e) {
+        squares.forEach(div => {
+            div.addEventListener('mouseover', () => {
+                div.setAttribute('style', 'backgroundColor');
+                div.style.backgroundColor = e.target.value;
+            })
+        })
+    })
+    grid.addEventListener('click', () => {
+    squares.forEach(div => {
+        div.addEventListener('mouseover', () => {
+            div.setAttribute('style', 'background: black');
+        })
+    })
 })
-
-//This function adds the black background
-//to the pixel div. The color selection should
-//change the div style if user selects another color. 
-//Only on mouseover event should the color change. 
-//Try integrating the eventlistener into the creatGrid functions.
-grid.addEventListener('mouseover', function(e) {
-    let tip = e.target;
-    tip.classList.add('pixel');
-})
-//Here all pixel divs are selected
-//If the user changes color the div background color should change on mouseover event
-newPixel = grid.querySelectorAll('div')
+}
+paintColor()
