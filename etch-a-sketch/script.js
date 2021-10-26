@@ -1,11 +1,3 @@
-/*
-This code needs:
-A function that changes the color after 
-user choice has been made and does not reset the 
-whole grid or changes colors of already hovered (colored)
-cells
-*/
-
 const grid = document.querySelector('.grid');
 let pixel;
 
@@ -65,15 +57,15 @@ function paintColor(){
             div.addEventListener('mouseover', () => {
                 div.setAttribute('style', 'backgroundColor');
                 div.style.backgroundColor = e.target.value;
-            })
+            })  
         })
     })
-    grid.addEventListener('click', () => {
     squares.forEach(div => {
         div.addEventListener('mouseover', () => {
             div.setAttribute('style', 'background: black');
-        })
+        }) 
     })
-})
+
 }
 paintColor()
+

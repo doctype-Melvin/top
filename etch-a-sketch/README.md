@@ -16,3 +16,9 @@ the painting eventListener so that upon clicking no more divs change color.
 Another feature will be the rainbow mode which adds random colors. Finally there
 needs to be an option for different opacity levels. 
 Lots of work still ahead. 
+
+Oct. 26 Tuesday
+I couldn't find a way to make the click work as intended.
+The functionality was dropped.
+Tried to add random color but that also was unsuccessful. 
+Leaving the project for now.
