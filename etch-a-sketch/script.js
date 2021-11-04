@@ -4,7 +4,6 @@ let pixel;
 function createGrid() {
     for (let i = 0; i < 256; i++) {
         pixel = document.createElement('div');
-        //pixel.classList.add('pixel');
         pixel.setAttribute('id', 'pixel');
         grid.appendChild(pixel);
     }
@@ -42,11 +41,11 @@ function changeGrid(size) {
     removeGrid();
     for (let i = 0; i < size; i++) {
         pixel = document.createElement('div');
-        //pixel.classList.add('pixel');
         pixel.setAttribute('id', 'pixel');
         grid.appendChild(pixel);
     }
     paintColor();
+    paintRainbow();
 };
 
 function paintColor(){
@@ -55,7 +54,6 @@ function paintColor(){
     picker.addEventListener('input', function(e) {
         squares.forEach(div => {
             div.addEventListener('mouseover', () => {
-                div.setAttribute('style', 'backgroundColor');
                 div.style.backgroundColor = e.target.value;
             })  
         })
@@ -67,5 +65,57 @@ function paintColor(){
     })
 
 }
-paintColor()
+paintColor();
 
+function createRainbow(){
+    let colorArray = [];
+        colorArray.push(Math.floor(Math.random()*255));
+        colorArray.push(Math.floor(Math.random()*255));
+        colorArray.push(Math.floor(Math.random()*255));
+    let rgb = `rgb(${colorArray[0]}, ${colorArray[1]}, ${colorArray[2]})`
+    return rgb;
+}
+createRainbow();
+
+
+        let menu = document.querySelector('.menu');
+            let picker = document.querySelector('#picker')
+                let button = document.createElement('button');
+function paintRainbow(){
+    let squares = document.querySelectorAll('#pixel');
+        button.textContent = 'Rainbow Mode';
+        menu.insertBefore(button, picker);
+            button.addEventListener('click', () => {
+                squares.forEach(div => {
+                    div.addEventListener('mouseover', () => { 
+                        div.style.backgroundColor = createRainbow()
+                })
+            })
+})
+}
+paintRainbow();
+
+// function increaseOpacity(){
+//     let opacityArray = [0, 0, 0, 0];
+//     //let i = 0;
+//     for (; opacityArray[3] < 1; opacityArray[3] += 0.1) {
+//         console.log(opacityArray[3])
+//     }
+//     return `rgba(${opacityArray[0]}, ${opacityArray[1]}, ${opacityArray[2]}, ${opacityArray[3]})`
+// };
+// console.log(increaseOpacity());
+
+    let greyScale = document.createElement('button');
+function paintOpacity(){
+    let squares = document.querySelectorAll('#pixel');
+        greyScale.textContent = 'Grey Scale';
+        menu.insertBefore(greyScale, picker);
+            greyScale.addEventListener('click', () => {
+                squares.forEach(div => {
+                    div.addEventListener('mouseover', () => {
+                        div.style.opacity = 0.05;
+                    })
+                })
+            })
+}
+paintOpacity();
