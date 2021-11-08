@@ -39,6 +39,7 @@ function removeGrid() {
 
 function changeGrid(size) {
     removeGrid();
+    
     for (let i = 0; i < size; i++) {
         pixel = document.createElement('div');
         pixel.setAttribute('id', 'pixel');
@@ -46,6 +47,7 @@ function changeGrid(size) {
     }
     paintColor();
     paintRainbow();
+    erase();
 };
 
 function paintColor(){
@@ -77,10 +79,10 @@ function createRainbow(){
 }
 createRainbow();
 
-
         let menu = document.querySelector('.menu');
             let picker = document.querySelector('#picker')
                 let button = document.createElement('button');
+        
 function paintRainbow(){
     let squares = document.querySelectorAll('#pixel');
         button.textContent = 'Rainbow Mode';
@@ -95,27 +97,18 @@ function paintRainbow(){
 }
 paintRainbow();
 
-// function increaseOpacity(){
-//     let opacityArray = [0, 0, 0, 0];
-//     //let i = 0;
-//     for (; opacityArray[3] < 1; opacityArray[3] += 0.1) {
-//         console.log(opacityArray[3])
-//     }
-//     return `rgba(${opacityArray[0]}, ${opacityArray[1]}, ${opacityArray[2]}, ${opacityArray[3]})`
-// };
-// console.log(increaseOpacity());
 
-    let greyScale = document.createElement('button');
-function paintOpacity(){
+let eraser = document.createElement('button');
+eraser.textContent = 'Eraser';
+menu.insertBefore(eraser, picker);
+function erase(){
     let squares = document.querySelectorAll('#pixel');
-        greyScale.textContent = 'Grey Scale';
-        menu.insertBefore(greyScale, picker);
-            greyScale.addEventListener('click', () => {
-                squares.forEach(div => {
-                    div.addEventListener('mouseover', () => {
-                        div.style.opacity = 0.05;
-                    })
-                })
+    eraser.addEventListener('click', () => {
+        squares.forEach(div => {
+            div.addEventListener('mouseover', () => {
+                div.style.backgroundColor = 'rgb(255, 255, 255)';
             })
+        })
+    })
 }
-paintOpacity();
+erase();
